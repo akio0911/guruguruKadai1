@@ -16,9 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kx9-wP-hAM">
-                                <rect key="frame" x="20" y="44" width="374" height="303"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kx9-wP-hAM">
+                                <rect key="frame" x="20" y="44" width="374" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="gin-sO-ZZX"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="InputLabelCell" id="i8o-cz-DNk" customClass="InputLabelCell" customModule="challenge_1" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="374" height="43.5"/>
@@ -41,20 +44,20 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SpZ-7I-2hs">
+                                <rect key="frame" x="32" y="291" width="43" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dj1-5d-RU6">
-                                <rect key="frame" x="20" y="347" width="67" height="31"/>
+                                <rect key="frame" x="20" y="252" width="67" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
                                     <action selector="calculateSum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="emE-Jk-ZNP"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SpZ-7I-2hs">
-                                <rect key="frame" x="32.5" y="386" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -62,15 +65,16 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kx9-wP-hAM" secondAttribute="trailing" constant="20" id="7qG-sp-5EZ"/>
                             <constraint firstItem="Dj1-5d-RU6" firstAttribute="leading" secondItem="kx9-wP-hAM" secondAttribute="leading" id="CbK-ix-BYy"/>
                             <constraint firstItem="SpZ-7I-2hs" firstAttribute="top" secondItem="Dj1-5d-RU6" secondAttribute="bottom" constant="8" symbolic="YES" id="KMs-3K-6ck"/>
-                            <constraint firstItem="Dj1-5d-RU6" firstAttribute="top" secondItem="kx9-wP-hAM" secondAttribute="bottom" id="e9p-xf-IKe"/>
-                            <constraint firstItem="Dj1-5d-RU6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="347" id="tBH-7y-AMP"/>
+                            <constraint firstItem="Dj1-5d-RU6" firstAttribute="top" secondItem="kx9-wP-hAM" secondAttribute="bottom" constant="8" symbolic="YES" id="ZO9-gN-PB9"/>
                             <constraint firstItem="kx9-wP-hAM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="u0s-RJ-h2s"/>
+                            <constraint firstItem="SpZ-7I-2hs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="uEs-Ld-Pc9"/>
                             <constraint firstItem="Dj1-5d-RU6" firstAttribute="centerX" secondItem="SpZ-7I-2hs" secondAttribute="centerX" id="xAY-aa-af1"/>
                             <constraint firstItem="kx9-wP-hAM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="zX4-79-BZK"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="inputTextTableView" destination="kx9-wP-hAM" id="fRq-SN-pVS"/>
+                        <outlet property="inputTextTableViewHeight" destination="gin-sO-ZZX" id="svl-q4-deC"/>
                         <outlet property="resultLabel" destination="SpZ-7I-2hs" id="UMY-sP-a5u"/>
                     </connections>
                 </viewController>

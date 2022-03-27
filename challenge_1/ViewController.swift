@@ -10,13 +10,18 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate {
     let numberOfInput = 5
     var inputNumbers: [Int] = []
-
     @IBOutlet private weak var inputTextTableView: UITableView!
+    @IBOutlet private weak var inputTextTableViewHeight: NSLayoutConstraint!
     @IBOutlet private weak var resultLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         inputNumbers = Array(repeating: 0, count: numberOfInput)
         inputTextTableView.dataSource = self
+    }
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+            inputTextTableViewHeight.constant =
+        inputTextTableView.rowHeight * CGFloat(numberOfInput)
     }
     @IBAction private func calculateSum(_ sender: Any) {
         let resultNumber = inputNumbers
