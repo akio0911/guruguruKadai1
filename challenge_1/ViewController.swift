@@ -21,7 +21,7 @@ class ViewController: UIViewController, UITableViewDelegate {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
             inputTextTableViewHeight.constant =
-        inputTextTableView.rowHeight * CGFloat(numberOfInput)
+        CGFloat(numberOfInput * InputLabelCell.cellHeight)
     }
     @IBAction private func calculateSum(_ sender: Any) {
         let resultNumber = inputNumbers

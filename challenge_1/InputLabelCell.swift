@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class InputLabelCell: UITableViewCell, UITextFieldDelegate {
+    static let cellHeight = 45
     weak var delegate: InputLabelCellDelegate?
     var index = 0
     @IBAction private func updateTextWhenEditingChanged(_ sender: UITextField) {
